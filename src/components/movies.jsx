@@ -1,11 +1,25 @@
 import React, { Component } from "react";
-import { getMovies, deleteMovie } from "../services/fakeMovieService";
+import {
+  getMovies,
+  deleteMovie,
+  getPageMovies,
+} from "../services/fakeMovieService";
 import Like from "./like";
 import "./movies.css";
+import PaginationBar from "./pagination";
 class Movies extends Component {
   state = {
-    movies: getMovies(),
+    movies: getPageMovies(1),
+    page: 1,
   };
+  // componentDidMount() {
+  //   const movies = this.setMoviesByPageNo(1);
+  //   console.log(movies);
+  //   this.setState({
+  //     movies: movies,
+  //     page: 1,
+  //   });
+  // }
   render() {
     return (
       <div className="movies-table">
@@ -22,9 +36,19 @@ class Movies extends Component {
           </thead>
           <tbody>{this.getMoviesRow()}</tbody>
         </table>
+        <PaginationBar
+          changePage={this.setMoviesByPageNo}
+          page={this.state.page}
+        />
       </div>
     );
   }
+
+  setMoviesByPageNo = (page) => {
+    const movies = getMovies().slice((page - 1) * 5, page * 5);
+    this.setState({ movies: movies, page: page });
+  };
+
   getNumberOfMovies() {
     if (this.state.movies.length !== 0) {
       return <h4>Showing {this.state.movies.length} movies in the database</h4>;

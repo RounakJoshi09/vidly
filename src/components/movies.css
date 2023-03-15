@@ -1,5 +1,6 @@
 .movies-table{
     width: 70%;
     margin-inline:auto ;
-    margin-top: 2.5%;        
+    margin-top: 2.5%;
+    font-size: 0.8rem;        
 }
