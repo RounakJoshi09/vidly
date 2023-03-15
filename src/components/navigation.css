@@ -1,0 +1,22 @@
+.navigation{
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.genre{
+    margin: 0;
+    padding: 12px;
+    width: 100px;
+    border-left: 0.5px solid grey;
+    border-right: 0.5px solid grey;
+    border-top: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+    border-collapse: collapse;
+}
+.last-genre{
+    border-bottom: 0.5px solid grey;
+    border-collapse: collapse;
+}
