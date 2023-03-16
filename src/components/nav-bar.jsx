@@ -22,7 +22,7 @@ class NavBar extends Component {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <Link className="nav-link" to="/movies">
+              <Link className="nav-link" to="/">
                 Movies <span class="sr-only">(current)</span>
               </Link>
             </li>
